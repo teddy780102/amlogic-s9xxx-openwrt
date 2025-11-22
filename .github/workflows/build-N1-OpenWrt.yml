@@ -12,11 +12,11 @@ on:
       source_branch:
         description: "Select the source branch"
         required: false
-        default: "lede_master"
+        default: "lede-master"
         type: choice
         options:
           - openwrt-main
-          - lede_master
+          - lede-master
           - immortalwrt-master
       openwrt_board:
         description: "Select device board"
@@ -411,6 +411,7 @@ jobs:
           kernel_repo: ${{ inputs.kernel_repo }}
           kernel_usage: ${{ inputs.kernel_usage }}
           builder_name: ${{ inputs.builder_name }}
+          openwrt_ip : 192.168.2.2
 
       - name: Upload the packaged OpenWrt
         uses: ncipollo/release-action@main

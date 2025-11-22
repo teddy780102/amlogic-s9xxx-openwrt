@@ -168,7 +168,7 @@ jobs:
         working-directory: /builder
         if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         run: |
-          armsr_tarfile_repo="teddy780102/amlogic-s9xxx-openwrt"
+          armsr_tarfile_repo="teddy780102/openwrt2021"
           releases_tag_keywords="OpenWrt_lede_save_"
 
           armsr_tarfile_path="openwrt/output"
@@ -221,6 +221,7 @@ jobs:
           KERNEL_VERSION_NAME: ${{ inputs.openwrt_kernel }}
           KERNEL_AUTO_LATEST: ${{ inputs.auto_kernel }}
           WHOAMI: ${{ inputs.builder_name }}
+          openwrt_ip : 192.168.2.2
 
       - name: Upload the packaged OpenWrt
         uses: ncipollo/release-action@main
